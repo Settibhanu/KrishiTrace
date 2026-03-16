@@ -1,0 +1,63 @@
+# ============================================================
+# Krishi-Trace AI — Project Requirements
+# ============================================================
+# This is a Node.js / React project.
+# Install dependencies using the commands below, NOT pip.
+#
+# Setup:
+#   cd backend  && npm install
+#   cd frontend && npm install
+#
+# Run:
+#   cd backend  && npm run dev     (starts Express API on port 5000)
+#   cd frontend && npm run dev     (starts Vite dev server on port 5173)
+# ============================================================
+
+# ── Runtime ──────────────────────────────────────────────────
+Node.js       >= 18.x
+npm           >= 9.x
+MongoDB Atlas (cloud) or MongoDB >= 6.x (local)
+
+# ── Backend Dependencies (backend/package.json) ──────────────
+express           ^4.18.2    # Web framework
+mongoose          ^8.0.3     # MongoDB ODM
+bcryptjs          ^2.4.3     # Password hashing
+jsonwebtoken      ^9.0.2     # JWT authentication
+dotenv            ^16.3.1    # Environment variables
+cors              ^2.8.5     # Cross-origin requests
+qrcode            ^1.5.3     # QR code generation
+uuid              ^9.0.0     # Unique record IDs
+ethers            ^6.9.0     # Blockchain / wallet utilities
+axios             ^1.6.2     # HTTP client
+multer            ^1.4.5     # File upload handling
+
+# Backend Dev Dependencies
+nodemon           ^3.0.2     # Auto-restart on file change
+
+# ── Frontend Dependencies (frontend/package.json) ────────────
+react             ^19.2.4    # UI framework
+react-dom         ^19.2.4    # React DOM renderer
+react-router-dom  ^7.13.1    # Client-side routing
+axios             ^1.13.6    # HTTP client
+react-hot-toast   ^2.6.0     # Toast notifications
+lucide-react      ^0.577.0   # Icon library
+recharts          ^3.8.0     # Charts (price trend graphs)
+leaflet           ^1.9.4     # Interactive maps
+react-leaflet     ^5.0.0     # React wrapper for Leaflet
+qrcode.react      ^4.2.0     # QR code display component
+i18next           ^25.8.18   # Internationalisation
+react-i18next     ^16.5.8    # React bindings for i18next
+
+# Frontend Dev Dependencies
+vite              ^8.0.0     # Build tool / dev server
+@vitejs/plugin-react ^6.0.0  # Vite React plugin
+eslint            ^9.39.4    # Linter
+
+# ── Environment Variables Required ───────────────────────────
+# backend/.env
+#   MONGO_URI=<your MongoDB Atlas connection string>
+#   JWT_SECRET=<random secret string>
+#   PORT=5000
+#
+# frontend/.env
+#   VITE_API_URL=http://localhost:5000/api
