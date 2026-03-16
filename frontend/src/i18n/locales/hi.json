@@ -1,0 +1,103 @@
+{
+  "appName": "कृषि-ट्रेस AI",
+  "tagline": "पारदर्शी खेती। उचित मूल्य। सशक्त किसान।",
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "harvest": "फसल दर्ज करें",
+    "ledger": "लेजर",
+    "gis": "GIS ट्रैकर",
+    "iot": "IoT मॉनिटर",
+    "reports": "रिपोर्ट",
+    "scan": "QR स्कैन",
+    "logout": "लॉगआउट",
+    "login": "लॉगिन",
+    "register": "पंजीकरण"
+  },
+  "auth": {
+    "mobile": "मोबाइल नंबर",
+    "password": "पासवर्ड",
+    "name": "पूरा नाम",
+    "role": "भूमिका",
+    "language": "पसंदीदा भाषा",
+    "farmAddress": "खेत का पता",
+    "loginBtn": "लॉगिन",
+    "registerBtn": "पंजीकरण करें",
+    "noAccount": "खाता नहीं है?",
+    "hasAccount": "पहले से खाता है?"
+  },
+  "harvest": {
+    "title": "फसल दर्ज करें",
+    "pressToSpeak": "बोलने के लिए दबाएं",
+    "listening": "सुन रहे हैं...",
+    "processing": "प्रोसेस हो रहा है...",
+    "cropType": "फसल का प्रकार",
+    "quantity": "मात्रा",
+    "unit": "इकाई",
+    "farmerPayout": "किसान भुगतान (₹/किग्रा)",
+    "transportCost": "परिवहन लागत (₹/किग्रा)",
+    "finalPrice": "अंतिम उपभोक्ता मूल्य (₹/किग्रा)",
+    "submit": "लेजर में जमा करें",
+    "success": "फसल सफलतापूर्वक दर्ज की गई!",
+    "voiceFallback": "टेक्स्ट फॉर्म का उपयोग करें",
+    "harvestDate": "कटाई की तारीख"
+  },
+  "ledger": {
+    "title": "ब्लॉकचेन लेजर",
+    "txHash": "लेनदेन हैश",
+    "block": "ब्लॉक",
+    "crop": "फसल",
+    "quantity": "मात्रा",
+    "payout": "किसान भुगतान",
+    "status": "स्थिति",
+    "compliant": "उचित मूल्य ✓",
+    "violation": "उल्लंघन ⚠"
+  },
+  "qr": {
+    "title": "सत्यापित करने के लिए स्कैन करें",
+    "scanPrompt": "उत्पाद पर QR कोड स्कैन करें",
+    "farmerName": "किसान",
+    "farmLocation": "खेत का स्थान",
+    "harvestDate": "कटाई की तारीख",
+    "payoutBreakdown": "मूल्य विवरण",
+    "farmerPayout": "किसान भुगतान",
+    "transport": "परिवहन",
+    "finalPrice": "अंतिम मूल्य",
+    "verified": "ब्लॉकचेन पर सत्यापित ✓",
+    "notFound": "लेजर में उत्पाद नहीं मिला"
+  },
+  "gis": {
+    "title": "GIS लॉजिस्टिक्स ट्रैकर",
+    "activeShipments": "सक्रिय शिपमेंट",
+    "eta": "अनुमानित समय",
+    "status": "स्थिति",
+    "deviation": "मार्ग विचलन अलर्ट",
+    "newShipment": "नया शिपमेंट"
+  },
+  "iot": {
+    "title": "IoT कोल्ड-चेन मॉनिटर",
+    "temperature": "तापमान (°C)",
+    "humidity": "आर्द्रता (%)",
+    "alerts": "सक्रिय अलर्ट",
+    "noAlerts": "कोई सक्रिय अलर्ट नहीं",
+    "simulate": "सेंसर डेटा सिमुलेट करें"
+  },
+  "reports": {
+    "title": "FPO रिपोर्ट",
+    "totalRecords": "कुल रिकॉर्ड",
+    "compliant": "अनुपालन",
+    "violations": "उल्लंघन",
+    "complianceRate": "अनुपालन दर",
+    "byCrop": "फसल प्रकार के अनुसार",
+    "trends": "भुगतान रुझान",
+    "download": "रिपोर्ट डाउनलोड करें"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "एक त्रुटि हुई",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "back": "वापस",
+    "viewDetails": "विवरण देखें",
+    "noData": "कोई डेटा उपलब्ध नहीं"
+  }
+}

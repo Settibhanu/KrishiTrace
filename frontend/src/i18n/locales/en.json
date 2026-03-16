@@ -1,0 +1,103 @@
+{
+  "appName": "Krishi-Trace AI",
+  "tagline": "Transparent Farming. Fair Pricing. Empowered Farmers.",
+  "nav": {
+    "dashboard": "Dashboard",
+    "harvest": "Log Harvest",
+    "ledger": "Ledger",
+    "gis": "GIS Tracker",
+    "iot": "IoT Monitor",
+    "reports": "Reports",
+    "scan": "Scan QR",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "auth": {
+    "mobile": "Mobile Number",
+    "password": "Password",
+    "name": "Full Name",
+    "role": "Role",
+    "language": "Preferred Language",
+    "farmAddress": "Farm Address",
+    "loginBtn": "Login",
+    "registerBtn": "Register",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "harvest": {
+    "title": "Log Harvest",
+    "pressToSpeak": "Press & Hold to Speak",
+    "listening": "Listening...",
+    "processing": "Processing...",
+    "cropType": "Crop Type",
+    "quantity": "Quantity",
+    "unit": "Unit",
+    "farmerPayout": "Farmer Payout (₹/kg)",
+    "transportCost": "Transport Cost (₹/kg)",
+    "finalPrice": "Final Consumer Price (₹/kg)",
+    "submit": "Submit to Ledger",
+    "success": "Harvest logged successfully!",
+    "voiceFallback": "Use text form instead",
+    "harvestDate": "Harvest Date"
+  },
+  "ledger": {
+    "title": "Blockchain Ledger",
+    "txHash": "Transaction Hash",
+    "block": "Block",
+    "crop": "Crop",
+    "quantity": "Quantity",
+    "payout": "Farmer Payout",
+    "status": "Status",
+    "compliant": "Fair Price ✓",
+    "violation": "Violation ⚠"
+  },
+  "qr": {
+    "title": "Scan to Verify",
+    "scanPrompt": "Scan a QR code on the product",
+    "farmerName": "Farmer",
+    "farmLocation": "Farm Location",
+    "harvestDate": "Harvest Date",
+    "payoutBreakdown": "Price Breakdown",
+    "farmerPayout": "Farmer Payout",
+    "transport": "Transport",
+    "finalPrice": "Final Price",
+    "verified": "Verified on Blockchain ✓",
+    "notFound": "Product not found in ledger"
+  },
+  "gis": {
+    "title": "GIS Logistics Tracker",
+    "activeShipments": "Active Shipments",
+    "eta": "ETA",
+    "status": "Status",
+    "deviation": "Route Deviation Alert",
+    "newShipment": "New Shipment"
+  },
+  "iot": {
+    "title": "IoT Cold-Chain Monitor",
+    "temperature": "Temperature (°C)",
+    "humidity": "Humidity (%)",
+    "alerts": "Active Alerts",
+    "noAlerts": "No active alerts",
+    "simulate": "Simulate Sensor Data"
+  },
+  "reports": {
+    "title": "FPO Reports",
+    "totalRecords": "Total Records",
+    "compliant": "Compliant",
+    "violations": "Violations",
+    "complianceRate": "Compliance Rate",
+    "byCrop": "By Crop Type",
+    "trends": "Payout Trends",
+    "download": "Download Report"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "viewDetails": "View Details",
+    "noData": "No data available"
+  }
+}

@@ -1,0 +1,12 @@
+# Root level
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kiro
+.kiro/
