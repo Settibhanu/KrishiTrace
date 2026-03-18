@@ -1,17 +1,11 @@
 {
-  "name": "krishi-trace-ai",
-  "version": "1.0.0",
-  "description": "Monorepo root for Krishi-Trace AI — blockchain supply chain + multilingual voice AI for Indian farmers",
-  "private": true,
-  "scripts": {
-    "dev:backend": "npm run dev --prefix backend",
-    "dev:frontend": "npm run dev --prefix frontend",
-    "start:backend": "npm start --prefix backend",
-    "build:frontend": "npm run build --prefix frontend",
-    "seed": "node backend/src/seed.js",
-    "install:all": "npm install --prefix backend && npm install --prefix frontend"
+  "dependencies": {
+    "mongodb": "^7.1.0"
   },
-  "engines": {
-    "node": ">=18.0.0"
+
+
+"scripts": {
+  "start": "node server.js"
   }
+
 }
