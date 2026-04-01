@@ -4,6 +4,22 @@ node_modules/
 .env.local
 .env.*.local
 
+# Build outputs
+dist/
+build/
+.vercel/
+
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Security - certificates and keys
+*.key
+*.pem
+*.crt
+
 # OS
 .DS_Store
 Thumbs.db

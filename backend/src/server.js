@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 
 const authRoutes = require('./routes/auth');
 const harvestRoutes = require('./routes/harvest');
@@ -36,7 +36,7 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/krishi_tra
 mongoose
   .connect(MONGO_URI)
   .then(() => {
-    console.log('MongoDB connected');
+    console.log(`MongoDB connected to: ${MONGO_URI}`);
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((err) => {

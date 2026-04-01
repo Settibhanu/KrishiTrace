@@ -2,7 +2,7 @@
  * Seed script — populates the database with demo data.
  * Run: node src/seed.js
  */
-require('dotenv').config();
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const mongoose = require('mongoose');
 const FairPriceConfig = require('./models/FairPriceConfig');
 const User = require('./models/User');
@@ -37,7 +37,7 @@ async function seed() {
   for (const u of DEMO_USERS) {
     const existing = await User.findOne({ mobile: u.mobile });
     if (!existing) {
-      await User.create(u);
+      await new User(u).save(); // use .save() so bcrypt pre-save hook hashes the password
       console.log(`Created demo user: ${u.name} (${u.mobile}) — role: ${u.role}`);
     } else {
       console.log(`User already exists: ${u.mobile}`);

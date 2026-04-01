@@ -37,8 +37,10 @@ export default function LoginPage() {
         </div>
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label>{t('auth.mobile')}</label>
+            <label htmlFor="mobile">{t('auth.mobile')}</label>
             <input
+              id="mobile"
+              name="mobile"
               type="tel"
               value={form.mobile}
               onChange={(e) => setForm({ ...form, mobile: e.target.value })}
@@ -47,8 +49,10 @@ export default function LoginPage() {
             />
           </div>
           <div className="form-group">
-            <label>{t('auth.password')}</label>
+            <label htmlFor="password">{t('auth.password')}</label>
             <input
+              id="password"
+              name="password"
               type="password"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}

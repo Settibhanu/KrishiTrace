@@ -224,6 +224,16 @@ ${rec?.qrCode ? `<div class="qr-section"><img src="${rec.qrCode}" alt="QR"/><p>S
         </div>
       </div>
 
+      {/* Fallback submit — shown when Market Advisor hasn't loaded prices yet */}
+      {!suggestedPrices && !result && (
+        <div style={{ marginTop: 16 }}>
+          <button className="btn-primary" onClick={handleSubmit} disabled={loading}
+            style={{ padding: '12px 28px' }}>
+            {loading ? <Loader2 size={18} className="spin" /> : '📋 Submit to Ledger'}
+          </button>
+        </div>
+      )}
+
       {/* Price Confirmation Banner — shown when market prices are suggested */}
       {suggestedPrices && form.cropType && form.quantity && !result && (
         <div id="price-confirm-section" className="price-confirm-banner">
