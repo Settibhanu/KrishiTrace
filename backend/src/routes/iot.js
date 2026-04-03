@@ -15,10 +15,14 @@ router.post('/readings', async (req, res) => {
       return res.status(400).json({ message: 'shipmentId is required' });
     }
 
-    const shipment = await Shipment.findById(shipmentId).populate({
-      path: 'recordIds',
-      select: 'cropType',
-    });
+    const mongoose = require('mongoose');
+    let shipment;
+    if (mongoose.Types.ObjectId.isValid(shipmentId)) {
+      shipment = await Shipment.findById(shipmentId).populate('recordIds');
+    } else {
+      shipment = await Shipment.findOne({ shipmentId }).populate('recordIds');
+    }
+    
     if (!shipment) return res.status(404).json({ message: 'Shipment not found' });
 
     // Determine crop type for threshold lookup
