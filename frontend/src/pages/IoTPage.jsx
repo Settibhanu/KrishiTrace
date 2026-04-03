@@ -61,7 +61,7 @@ export default function IoTPage() {
       </div>
 
       {/* Live Gauges */}
-      <div className="iot-gauges">
+      <div className="iot-gauges" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '16px' }}>
         <div className={`gauge-card ${latestTemp > 25 ? 'alert' : ''}`}>
           <Thermometer size={32} />
           <div className="gauge-value">{latestTemp != null ? `${latestTemp}°C` : '--'}</div>
@@ -71,6 +71,13 @@ export default function IoTPage() {
           <Droplets size={32} />
           <div className="gauge-value">{latestHum != null ? `${latestHum}%` : '--'}</div>
           <div className="gauge-label">{t('iot.humidity')}</div>
+        </div>
+        <div className={`gauge-card ${activeAlerts.length > 0 && readings[readings.length - 1]?.animalDetected ? 'alert' : 'ok'}`}>
+          <AlertTriangle size={32} color={readings[readings.length - 1]?.animalDetected ? '#ef4444' : 'currentColor'} />
+          <div className="gauge-value" style={{ color: readings[readings.length - 1]?.animalDetected ? '#ef4444' : 'inherit' }}>
+            {readings[readings.length - 1]?.animalDetected ? 'ALERT' : 'SAFE'}
+          </div>
+          <div className="gauge-label">Perimeter</div>
         </div>
         <div className={`gauge-card ${activeAlerts.length > 0 ? 'alert' : 'ok'}`}>
           {activeAlerts.length > 0 ? <AlertTriangle size={32} /> : <CheckCircle size={32} />}
