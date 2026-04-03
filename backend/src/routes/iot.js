@@ -10,9 +10,9 @@ const router = express.Router();
 // POST /api/iot/readings — ingest a sensor reading
 router.post('/readings', async (req, res) => {
   try {
-    const { shipmentId, temperature, humidity } = req.body;
-    if (!shipmentId || temperature == null || humidity == null) {
-      return res.status(400).json({ message: 'shipmentId, temperature, humidity are required' });
+    const { shipmentId, temperature, humidity, animalDetected } = req.body;
+    if (!shipmentId) {
+      return res.status(400).json({ message: 'shipmentId is required' });
     }
 
     const shipment = await Shipment.findById(shipmentId).populate({
@@ -30,11 +30,16 @@ router.post('/readings', async (req, res) => {
     let alertType = null;
     let alertMessage = '';
 
-    if (temperature < config.safeTemperatureMin || temperature > config.safeTemperatureMax) {
+    // Prioritize Animal Intrusion
+    if (animalDetected) {
+      alert = true;
+      alertType = 'intrusion';
+      alertMessage = '⚠️ CRITICAL: Wild animal intrusion detected at farm perimeter!';
+    } else if (temperature != null && (temperature < config.safeTemperatureMin || temperature > config.safeTemperatureMax)) {
       alert = true;
       alertType = 'temperature';
       alertMessage = `Temperature ${temperature}°C is outside safe range (${config.safeTemperatureMin}–${config.safeTemperatureMax}°C)`;
-    } else if (humidity < config.safeHumidityMin || humidity > config.safeHumidityMax) {
+    } else if (humidity != null && (humidity < config.safeHumidityMin || humidity > config.safeHumidityMax)) {
       alert = true;
       alertType = 'humidity';
       alertMessage = `Humidity ${humidity}% is outside safe range (${config.safeHumidityMin}–${config.safeHumidityMax}%)`;
@@ -42,8 +47,9 @@ router.post('/readings', async (req, res) => {
 
     const reading = new IoTReading({
       shipmentId,
-      temperature: parseFloat(temperature),
-      humidity: parseFloat(humidity),
+      temperature: temperature != null ? parseFloat(temperature) : undefined,
+      humidity: humidity != null ? parseFloat(humidity) : undefined,
+      animalDetected: animalDetected || false,
       alert,
       alertType,
       alertMessage,
