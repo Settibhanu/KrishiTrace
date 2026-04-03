@@ -50,7 +50,7 @@ router.post('/readings', async (req, res) => {
     }
 
     const reading = new IoTReading({
-      shipmentId,
+      shipmentId: shipment._id, // Save using the internal MongoDB ObjectId, NOT the string UUID
       temperature: temperature != null ? parseFloat(temperature) : undefined,
       humidity: humidity != null ? parseFloat(humidity) : undefined,
       animalDetected: animalDetected || false,
