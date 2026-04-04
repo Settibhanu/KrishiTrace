@@ -50,7 +50,14 @@ export default function IoTPage() {
 
   const latestTemp = readings[readings.length - 1]?.temperature;
   const latestHum = readings[readings.length - 1]?.humidity;
+  const latestAnimal = readings[readings.length - 1]?.animalDetected;
   const activeAlerts = readings.filter((r) => r.alert);
+
+  useEffect(() => {
+    if (latestAnimal) {
+      toast.error('🐗 CRITICAL: Animal Intrusion Detected at Perimeter!', { duration: 6000 });
+    }
+  }, [latestAnimal]);
 
   return (
     <div className="page">
