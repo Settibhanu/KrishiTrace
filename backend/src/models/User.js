@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema(
       coordinates: { type: [Number], default: [0, 0] }, // [lng, lat]
     },
     farmAddress: { type: String, default: '' },
+    growingCrops: { type: [String], default: [] },
     fpoId: { type: mongoose.Schema.Types.ObjectId, ref: 'FPO', default: null },
     loginAttempts: { type: Number, default: 0 },
     lockUntil: { type: Date, default: null },

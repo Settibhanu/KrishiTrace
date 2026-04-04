@@ -102,4 +102,19 @@ router.patch('/language', auth, async (req, res) => {
   }
 });
 
+// PATCH /api/auth/profile
+router.patch('/profile', auth, async (req, res) => {
+  try {
+    const { growingCrops, farmAddress } = req.body;
+    const updates = {};
+    if (growingCrops) updates.growingCrops = growingCrops;
+    if (farmAddress) updates.farmAddress = farmAddress;
+
+    const user = await User.findByIdAndUpdate(req.user.id, updates, { new: true });
+    res.json({ message: 'Profile updated', user: { id: user._id, growingCrops: user.growingCrops } });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 module.exports = router;
