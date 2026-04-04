@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import api from '../api';
 import toast from 'react-hot-toast';
-import { Thermometer, Droplets, AlertTriangle, CheckCircle, Loader2 } from 'lucide-react';
+import { Thermometer, Droplets, AlertTriangle, CheckCircle, Loader2, RefreshCw } from 'lucide-react';
 
 export default function IoTPage() {
   const { t } = useTranslation();
@@ -15,12 +15,19 @@ export default function IoTPage() {
 
   useEffect(() => {
     api.get('/gis/shipments').then((r) => { setShipments(r.data); if (r.data[0]) setSelectedId(r.data[0]._id); }).catch(() => {});
-    api.get('/iot/alerts').then((r) => setAlerts(r.data)).catch(() => {});
   }, []);
 
-  useEffect(() => {
+  const fetchData = () => {
     if (!selectedId) return;
     api.get(`/iot/readings/${selectedId}`).then((r) => setReadings(r.data)).catch(() => {});
+    api.get('/iot/alerts').then((r) => setAlerts(r.data)).catch(() => {});
+  };
+
+  useEffect(() => {
+    fetchData();
+    // Auto-refresh every 5 seconds
+    const intervalId = setInterval(fetchData, 5000);
+    return () => clearInterval(intervalId);
   }, [selectedId]);
 
   const simulate = async () => {
@@ -54,6 +61,9 @@ export default function IoTPage() {
             <option value="">Select Shipment</option>
             {shipments.map((s) => <option key={s._id} value={s._id}>{s.shipmentId?.slice(0, 12)} — {s.origin?.address}</option>)}
           </select>
+          <button className="btn-primary" onClick={fetchData} title="Refresh live sensors">
+            <RefreshCw size={16} /> Refresh
+          </button>
           <button className="btn-secondary" onClick={simulate} disabled={simLoading}>
             {simLoading ? <Loader2 size={16} className="spin" /> : t('iot.simulate')}
           </button>
