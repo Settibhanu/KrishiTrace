@@ -6,7 +6,7 @@
     "harvest": "Log Harvest",
     "ledger": "Ledger",
     "gis": "GIS Tracker",
-    "iot": "IoT Monitor",
+    "iot": "IoT Farm Monitor",
     "reports": "Reports",
     "scan": "Scan QR",
     "logout": "Logout",
@@ -74,7 +74,7 @@
     "newShipment": "New Shipment"
   },
   "iot": {
-    "title": "IoT Cold-Chain Monitor",
+    "title": "IoT Farm Monitor",
     "temperature": "Temperature (°C)",
     "humidity": "Humidity (%)",
     "alerts": "Active Alerts",

@@ -6,7 +6,7 @@
     "harvest": "फसल दर्ज करें",
     "ledger": "लेजर",
     "gis": "GIS ट्रैकर",
-    "iot": "IoT मॉनिटर",
+    "iot": "IoT फार्म मॉनिटर",
     "reports": "रिपोर्ट",
     "scan": "QR स्कैन",
     "logout": "लॉगआउट",
@@ -74,7 +74,7 @@
     "newShipment": "नया शिपमेंट"
   },
   "iot": {
-    "title": "IoT कोल्ड-चेन मॉनिटर",
+    "title": "IoT फार्म मॉनिटर",
     "temperature": "तापमान (°C)",
     "humidity": "आर्द्रता (%)",
     "alerts": "सक्रिय अलर्ट",
